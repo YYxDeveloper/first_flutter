@@ -10,22 +10,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         // appBar: AppBar(
         //   title: const Text('Flutter Demo'),
         // ),
-        body: Container(
-          child: const Text("yyx the basic layout"),
-          margin: const EdgeInsets.all(20.0),
-          // padding: const EdgeInsets.all(00.0),
-          padding: const EdgeInsets.all(20.0),
-          color: Colors.green[200],
-          height: 100,
-          width: 100,
-
-
-        ),
+        body: Center(
+          child: SizedBox(
+            width: 200,
+            height: 200,
+            child: Text(
+              'Hello World',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.blue,
+                backgroundColor: Colors.yellow,
+              ),
+            ),
+          ),
+        )
       ),
     );
   }
