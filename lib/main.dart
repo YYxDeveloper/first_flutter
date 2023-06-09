@@ -12,9 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // appBar: AppBar(
+        //   title: const Text('Flutter Demo'),
+        // ),
         body: Container(
-          alignment: Alignment.bottomCenter,
-          child: const Text("body container",style: TextStyle(color: Colors.red, fontSize: 30,backgroundColor: Colors.yellow),),
+          child: const Text("yyx the basic layout"),
+          margin: const EdgeInsets.all(20.0),
+          // padding: const EdgeInsets.all(00.0),
+          padding: const EdgeInsets.all(20.0),
+          color: Colors.green[200],
+          height: 100,
+          width: 100,
+
+
         ),
       ),
     );
