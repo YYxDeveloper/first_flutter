@@ -12,13 +12,21 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _switchValue = false;
   String _displayText = 'Switch is OFF';
+  // setState appBarTitle
+  String appBarTitle = 'Old Title';
 
+  void changeTitle(bool theValue) {
+    setState(() {
+      appBarTitle = theValue ? 'New Title' : 'Old Title';
+    });
+
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Switch Example'),
+          title: Text(appBarTitle),
         ),
         body: Container(
           padding: EdgeInsets.all(16.0),
@@ -31,6 +39,9 @@ class _MyAppState extends State<MyApp> {
                   setState(() {
                     _switchValue = value;
                     _displayText = value ? 'Switch is ON' : 'Switch is OFF';
+
+                    // appBarTitle
+                    changeTitle(value);
                   });
                 },
               ),
