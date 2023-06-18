@@ -12,36 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // appBar: AppBar(
-        //   title: const Text('Flutter Demo'),
-        // ),
-        body: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              childAspectRatio: 1.5,
-            ),
-            children: demoChildren(32)),
+        body: Container(
+          alignment: Alignment.bottomCenter,
+          child: const Text("body container",style: TextStyle(color: Colors.red, fontSize: 30,backgroundColor: Colors.yellow),),
+        ),
       ),
     );
   }
-}
-
-List<Widget> demoChildren(num) {
-  return List.generate(
-      num,
-      (i) => Center(
-            child: Ink(
-              decoration: const ShapeDecoration(
-                color: Colors.lightBlue,
-                shape: CircleBorder(),
-              ),
-              child: IconButton(
-                icon: Icon(IconData(59677 + i, fontFamily: 'MaterialIcons')),
-                color: Colors.white,
-                onPressed: () {},
-              ),
-            ),
-          ));
 }
 
 class MyHomePage extends StatefulWidget {
