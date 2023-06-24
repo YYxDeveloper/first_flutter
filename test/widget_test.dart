@@ -9,8 +9,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutte_basic01/main.dart';
+import 'dart:math';
 
+class Point {
+  final double x;
+  final double y;
+  final double distanceFromOrigin;
+
+  Point(double x, double y)
+      : x = x,
+        y = y,
+        distanceFromOrigin = sqrt(x * x + y * y);
+}
 void main() {
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
@@ -27,4 +39,10 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+
+  void testDartConstClass(){
+
+
+  }
+
 }
