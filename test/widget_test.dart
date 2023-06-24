@@ -52,5 +52,14 @@ void main() {
 
   }
   testDartConstClass();
+
+  //* test('Counter value should be incremented'
+  test('Counter value should be incremented', () {
+    final counter = Counter();
+
+    counter.increment();
+
+    expect(counter.value, 1);
+  });
 }
 
