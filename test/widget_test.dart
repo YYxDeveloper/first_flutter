@@ -9,22 +9,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutte_basic01/main.dart';
+// 使用 Future 的方式
+void fetchData() {
+  print('Fetching data...');
+  simulateNetworkDelay().then((result) {
+    print('Data fetched: $result');
+  }).catchError((error) {
+    print('Error fetching data: $error');
+  });
+}
 
+// 使用 async/await 的方式
+Future<void> fetchDataAsync() async {
+  print('Fetching data...');
+  try {
+    var result = await simulateNetworkDelay();
+    print('Data fetched: $result');
+  } catch (error) {
+    print('Error fetching data: $error');
+  }
+}
+
+Future<String> simulateNetworkDelay() {
+  return Future.delayed(Duration(seconds: 2), () {
+    return 'Data from the network';
+  });
+}
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  test('API Test', () async{
+    fetchData(); // 使用 Future 的方式
+    fetchDataAsync(); // 使用 async/await 的方式r
   });
 }
