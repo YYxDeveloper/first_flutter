@@ -44,6 +44,15 @@ class Counter {
 
   void decrement() => value--;
 }
+class Dog {
+  String name;
+  int age;
+
+  Dog(this.name, this.age);
+
+  Dog.newBorn()
+    :name = 'Doggy', age = 0;
+}
 void main() {
   void testDartConstClass(){
     //* yzPlane
