@@ -57,6 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text(_names[index]));
                 }),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('You have pushed the button this many times:'),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+            ],
+          ),
         ],
 
       ),
