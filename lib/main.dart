@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BlueBox());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +20,17 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+// a StatelessWidget class who color is blue
+class BlueBox extends StatelessWidget {
+  const BlueBox({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.blue,
+    );
+  }
+}
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
