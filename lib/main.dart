@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         //   title: const Text('Flutter Demo'),
         // ),
         body: Container(
+          alignment: Alignment.topRight,
           child: const Text("yyx the basic layout")
               
         ),
