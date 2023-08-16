@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'more_classes.dart';
 
 void main() {
   runApp(const MyApp());
 }
+class newLoggerMixin with LoggerMixin {
 
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
