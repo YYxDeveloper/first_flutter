@@ -10,6 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutte_basic01/main.dart';
 import 'dart:math';
+import 'more_classes.dart';
 
 class Point {
   final double x;
@@ -70,5 +71,12 @@ void main() {
 
     expect(counter.value, 1);
   });
+
+  void testMixin(){
+    final example = ExampleClass();
+    example.performAction(); // 使用 Mixin 中的 log 方法
+
+  }
+  testMixin();
 }
 
