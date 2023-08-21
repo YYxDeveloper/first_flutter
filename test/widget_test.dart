@@ -53,7 +53,15 @@ class Dog {
 
   Dog.newBorn()
     :name = 'Doggy', age = 0;
+}
+class DynamicObject {
+  @override
   dynamic noSuchMethod(Invocation invocation) {
+    print('呼叫未定義的方法：${invocation.memberName}');
+    return null;
+  }
+
+
 }
 void main() {
   void testDartConstClass(){
@@ -79,5 +87,24 @@ void main() {
 
   }
   testMixin();
+  dynamic data = fetchDataFromServer();
+
+  if (data is int) {
+    print('Received an integer: $data');
+  } else if (data is String) {
+    print('Received a string: $data');
+  } else if (data is List) {
+    print('Received a list with ${data.length} items');
+  } else {
+    print('Received an unknown data type');
+  }
 }
+
+dynamic fetchDataFromServer() {
+  // 模擬從伺服器獲取數據的操作
+  return 42; // 可以是整數、字串、列表等等
+}
+
+
+
 
