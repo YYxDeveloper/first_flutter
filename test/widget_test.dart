@@ -64,13 +64,8 @@ class DynamicObject {
 
 }
 void main() {
-  void testDartConstClass(){
-    //* yzPlane
-    Vector3d point = Vector3d.yzPlane(y: 2.5, z: 4.0);
-    print(point.x);
 
-  }
-  testDartConstClass();
+  // testDartConstClass();
 
   //* test('Counter value should be incremented'
   test('Counter value should be incremented', () {
@@ -81,13 +76,28 @@ void main() {
     expect(counter.value, 1);
   });
 
-  void testMixin(){
-    final example = ExampleClass();
-    example.performAction(); // 使用 Mixin 中的 log 方法
 
-  }
   // testMixin();
-  
+  trytru_constBuilder();
+
+}
+void testDartConstClass(){
+  //* yzPlane
+  Vector3d point = Vector3d.yzPlane(y: 2.5, z: 4.0);
+  print(point.x);
+
+}
+ void trytru_constBuilder(){
+  //https://www.jianshu.com/p/d4ea99eae8cd
+   const p1 = Point1(2, 3);
+   const p2 = Point1(2, 3);
+
+   print(identical(p1, p2));  // true，因為 p1 和 p2 都是編譯時常量
+ }
+void testMixin(){
+  final example = ExampleClass();
+  example.performAction(); // 使用 Mixin 中的 log 方法
+
 }
  void trytry_dynamic(){
    dynamic data = fetchDataFromServer();

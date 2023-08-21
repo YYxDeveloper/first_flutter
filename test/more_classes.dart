@@ -12,3 +12,9 @@ class ExampleClass with LoggerMixin {
     log('Action performed');
   }
 }
+class Point1 {
+  final int x;
+  final int y;
+
+  const Point1(this.x, this.y);
+}
