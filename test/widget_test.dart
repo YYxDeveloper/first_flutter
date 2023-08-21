@@ -86,20 +86,22 @@ void main() {
     example.performAction(); // 使用 Mixin 中的 log 方法
 
   }
-  testMixin();
-  dynamic data = fetchDataFromServer();
-
-  if (data is int) {
-    print('Received an integer: $data');
-  } else if (data is String) {
-    print('Received a string: $data');
-  } else if (data is List) {
-    print('Received a list with ${data.length} items');
-  } else {
-    print('Received an unknown data type');
-  }
+  // testMixin();
+  
 }
+ void trytry_dynamic(){
+   dynamic data = fetchDataFromServer();
 
+   if (data is int) {
+     print('Received an integer: $data');
+   } else if (data is String) {
+     print('Received a string: $data');
+   } else if (data is List) {
+     print('Received a list with ${data.length} items');
+   } else {
+     print('Received an unknown data type');
+   }
+ }
 dynamic fetchDataFromServer() {
   // 模擬從伺服器獲取數據的操作
   return 42; // 可以是整數、字串、列表等等
