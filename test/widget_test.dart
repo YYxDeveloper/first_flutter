@@ -53,6 +53,7 @@ class Dog {
 
   Dog.newBorn()
     :name = 'Doggy', age = 0;
+  dynamic noSuchMethod(Invocation invocation) {
 }
 void main() {
   void testDartConstClass(){

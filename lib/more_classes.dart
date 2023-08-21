@@ -31,11 +31,4 @@ class LoggedCalculator extends Calculator with LoggerMixin {
   }
 }
 
-void main() {
-  final actionLogger = ActionLogger();
-  actionLogger.performAction('Login');
 
-  final loggedCalculator = LoggedCalculator();
-  final sum = loggedCalculator.add(5, 7);
-  print('Sum: $sum');
-}
