@@ -79,6 +79,7 @@ void main() {
 
   // testMixin();
   // trytru_constBuilder();
+  enumAdvancePrintStringType();
 
 }
 void testDartConstClass(){
@@ -116,7 +117,20 @@ dynamic fetchDataFromServer() {
   // 模擬從伺服器獲取數據的操作
   return 42; // 可以是整數、字串、列表等等
 }
+//enum String type
+enum AuthException {
+  invalidEmail('Invalid email'),
+  emailAlreadyInUse('Email already in use'),
+  weakPassword('Password is too weak'),
+  wrongPassword('Wrong password');
 
+  const AuthException(this.message);
+  final String message;
+}
+void enumAdvancePrintStringType() {
+  const exception = AuthException.wrongPassword;
+  print(exception.message); // Wrong password
+}
 
 
 
