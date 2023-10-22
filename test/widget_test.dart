@@ -11,7 +11,30 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutte_basic01/main.dart';
 import 'dart:math';
 import 'more_classes.dart';
+import 'more_enum.dart';
 
+
+void main() {
+
+  // testDartConstClass();
+
+  //* test('Counter value should be incremented'
+  test('Counter value should be incremented', () {
+    final counter = Counter();
+
+    counter.increment();
+
+    expect(counter.value, 1);
+  });
+
+
+  // testMixin();
+  // trytru_constBuilder();
+  // enumAdvancePrintStringType();
+  // enumAdvancePrintStringType2();
+  enumAdvancePrintStringType3();
+
+}
 class Point {
   final double x;
   final double y;
@@ -63,25 +86,6 @@ class DynamicObject {
 
 
 }
-void main() {
-
-  // testDartConstClass();
-
-  //* test('Counter value should be incremented'
-  test('Counter value should be incremented', () {
-    final counter = Counter();
-
-    counter.increment();
-
-    expect(counter.value, 1);
-  });
-
-
-  // testMixin();
-  // trytru_constBuilder();
-  enumAdvancePrintStringType();
-
-}
 void testDartConstClass(){
   //* yzPlane
   Vector3d point = Vector3d.yzPlane(y: 2.5, z: 4.0);
@@ -117,20 +121,7 @@ dynamic fetchDataFromServer() {
   // 模擬從伺服器獲取數據的操作
   return 42; // 可以是整數、字串、列表等等
 }
-//enum String type
-enum AuthException {
-  invalidEmail('Invalid email'),
-  emailAlreadyInUse('Email already in use'),
-  weakPassword('Password is too weak'),
-  wrongPassword('Wrong password');
 
-  const AuthException(this.message);
-  final String message;
-}
-void enumAdvancePrintStringType() {
-  const exception = AuthException.wrongPassword;
-  print(exception.message); // Wrong password
-}
 
 
 
